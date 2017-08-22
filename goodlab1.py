@@ -37,7 +37,7 @@ for i in range(len(urls)):
 print("\nCWB RSS Realtime Typhoon Warning:")
 print("====================================")
 d = feedparser.parse('http://www.cwb.gov.tw/rss/Data/cwb_warning.xml')
-if 'item' in d.feed:
-    print(d.entries[0].title)
+if d.entries != None:
+    print(d.entries[0].description)
 else:
     print("Nothing happend. The world is peace :)")
